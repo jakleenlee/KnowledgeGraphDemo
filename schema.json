@@ -1,14 +1,14 @@
 {
     "nodes": [
         {
-            "node": "Gene",
+            "node": "features",
             "example": [
-                "COPB2",
-                "STAT3"
+                "s__Prevotella denticola",
+                "s__Streptococcus mutans"
             ],
             "display": [
                 {
-                    "label": "Gene ID",
+                    "label": "features ID",
                     "text": "${id}",
                     "type": "text"
                 },
@@ -18,81 +18,23 @@
                     "type": "text"
                 },
                 {
-                    "label": "uri",
-                    "text": "${uri}",
-                    "href": "${uri}",
-                    "type": "link"
-                }
-            ],
-            "relation": [],
-            "search": [
-                "id",
-                "label"
-            ]
-        },
-        {
-            "node": "GO Biological Process Term",
-            "example": [
-                "'de novo' posttranslational protein folding (GO:0051084)",
-                "2-oxoglutarate metabolic process (GO:0006103)"
-            ],
-            "display": [
-                {
-                    "label": "GO Biological Process Term ID",
-                    "text": "${id}",
+                    "label": "taxa_string",
+                    "text": "${taxa_string}",
                     "type": "text"
                 },
                 {
-                    "label": "label",
-                    "text": "${label}",
-                    "type": "text"
-                }
-            ],
-            "relation": [],
-            "search": [
-                "id",
-                "label"
-            ]
-        },
-        {
-            "node": "Mouse Phenotype",
-            "example": [
-                "abdominal situs ambiguus MP:0011250",
-                "abdominal situs inversus MP:0011249"
-            ],
-            "display": [
-                {
-                    "label": "Mouse Phenotype ID",
-                    "text": "${id}",
+                    "label": "relative_abundance",
+                    "text": "${relative_abundance}",
                     "type": "text"
                 },
                 {
-                    "label": "label",
-                    "text": "${label}",
-                    "type": "text"
-                }
-            ],
-            "relation": [],
-            "search": [
-                "id",
-                "label"
-            ]
-        },
-        {
-            "node": "Drug",
-            "example": [
-                "afatinib",
-                "erlotinib"
-            ],
-            "display": [
-                {
-                    "label": "Drug ID",
-                    "text": "${id}",
+                    "label": "prevalence",
+                    "text": "${prevalence}",
                     "type": "text"
                 },
                 {
-                    "label": "label",
-                    "text": "${label}",
+                    "label": "level",
+                    "text": "${level}",
                     "type": "text"
                 }
             ],
@@ -106,7 +48,7 @@
     "edges": [
         {
             "match": [
-                "LINCS Up Regulated"
+                "Negative co-abundance"
             ],
             "selected": true,
             "display": [
@@ -139,12 +81,32 @@
                     "label": "score",
                     "text": "${score}",
                     "type": "text"
+                },
+                {
+                    "label": "target taxa string",
+                    "text": "${target_taxa_string}",
+                    "type": "text"
+                },
+                {
+                    "label": "relative abundance",
+                    "text": "${relative_abundance}",
+                    "type": "text"
+                },
+                {
+                    "label": "prevalence",
+                    "text": "${prevalence}",
+                    "type": "text"
+                },
+                {
+                    "label": "level",
+                    "text": "${level}",
+                    "type": "text"
                 }
             ]
         },
         {
             "match": [
-                "LINCS Down Regulated"
+                "Negative co-abundance"
             ],
             "selected": true,
             "display": [
@@ -177,12 +139,32 @@
                     "label": "score",
                     "text": "${score}",
                     "type": "text"
+                },
+                {
+                    "label": "target taxa string",
+                    "text": "${target_taxa_string}",
+                    "type": "text"
+                },
+                {
+                    "label": "relative abundance",
+                    "text": "${relative_abundance}",
+                    "type": "text"
+                },
+                {
+                    "label": "prevalence",
+                    "text": "${prevalence}",
+                    "type": "text"
+                },
+                {
+                    "label": "level",
+                    "text": "${level}",
+                    "type": "text"
                 }
             ]
         },
         {
             "match": [
-                "GO BP"
+                "Negative co-abundance"
             ],
             "selected": true,
             "display": [
@@ -212,16 +194,35 @@
                     "type": "text"
                 },
                 {
-                    "label": "resource",
-                    "text": "${resource}",
-                    "href": "${resource}",
-                    "type": "link"
+                    "label": "score",
+                    "text": "${score}",
+                    "type": "text"
+                },
+                {
+                    "label": "target taxa string",
+                    "text": "${target_taxa_string}",
+                    "type": "text"
+                },
+                {
+                    "label": "relative abundance",
+                    "text": "${relative_abundance}",
+                    "type": "text"
+                },
+                {
+                    "label": "prevalence",
+                    "text": "${prevalence}",
+                    "type": "text"
+                },
+                {
+                    "label": "level",
+                    "text": "${level}",
+                    "type": "text"
                 }
             ]
         },
         {
             "match": [
-                "MP"
+                "Negative co-abundance"
             ],
             "selected": true,
             "display": [
@@ -251,41 +252,988 @@
                     "type": "text"
                 },
                 {
-                    "label": "resource",
-                    "text": "${resource}",
-                    "href": "${resource}",
-                    "type": "link"
+                    "label": "score",
+                    "text": "${score}",
+                    "type": "text"
+                },
+                {
+                    "label": "target taxa string",
+                    "text": "${target_taxa_string}",
+                    "type": "text"
+                },
+                {
+                    "label": "relative abundance",
+                    "text": "${relative_abundance}",
+                    "type": "text"
+                },
+                {
+                    "label": "prevalence",
+                    "text": "${prevalence}",
+                    "type": "text"
+                },
+                {
+                    "label": "level",
+                    "text": "${level}",
+                    "type": "text"
+                }
+            ]
+        },
+        {
+            "match": [
+                "Negative co-abundance"
+            ],
+            "selected": true,
+            "display": [
+                {
+                    "label": "source",
+                    "text": "${source}",
+                    "type": "text"
+                },
+                {
+                    "label": "relation",
+                    "text": "${relation}",
+                    "type": "text"
+                },
+                {
+                    "label": "target",
+                    "text": "${target}",
+                    "type": "text"
+                },
+                {
+                    "label": "source label",
+                    "text": "${source_label}",
+                    "type": "text"
+                },
+                {
+                    "label": "target label",
+                    "text": "${target_label}",
+                    "type": "text"
+                },
+                {
+                    "label": "score",
+                    "text": "${score}",
+                    "type": "text"
+                },
+                {
+                    "label": "target taxa string",
+                    "text": "${target_taxa_string}",
+                    "type": "text"
+                },
+                {
+                    "label": "relative abundance",
+                    "text": "${relative_abundance}",
+                    "type": "text"
+                },
+                {
+                    "label": "prevalence",
+                    "text": "${prevalence}",
+                    "type": "text"
+                },
+                {
+                    "label": "level",
+                    "text": "${level}",
+                    "type": "text"
+                }
+            ]
+        },
+        {
+            "match": [
+                "Negative co-abundance"
+            ],
+            "selected": true,
+            "display": [
+                {
+                    "label": "source",
+                    "text": "${source}",
+                    "type": "text"
+                },
+                {
+                    "label": "relation",
+                    "text": "${relation}",
+                    "type": "text"
+                },
+                {
+                    "label": "target",
+                    "text": "${target}",
+                    "type": "text"
+                },
+                {
+                    "label": "source label",
+                    "text": "${source_label}",
+                    "type": "text"
+                },
+                {
+                    "label": "target label",
+                    "text": "${target_label}",
+                    "type": "text"
+                },
+                {
+                    "label": "score",
+                    "text": "${score}",
+                    "type": "text"
+                },
+                {
+                    "label": "target taxa string",
+                    "text": "${target_taxa_string}",
+                    "type": "text"
+                },
+                {
+                    "label": "relative abundance",
+                    "text": "${relative_abundance}",
+                    "type": "text"
+                },
+                {
+                    "label": "prevalence",
+                    "text": "${prevalence}",
+                    "type": "text"
+                },
+                {
+                    "label": "level",
+                    "text": "${level}",
+                    "type": "text"
+                }
+            ]
+        },
+        {
+            "match": [
+                "Negative co-abundance"
+            ],
+            "selected": true,
+            "display": [
+                {
+                    "label": "source",
+                    "text": "${source}",
+                    "type": "text"
+                },
+                {
+                    "label": "relation",
+                    "text": "${relation}",
+                    "type": "text"
+                },
+                {
+                    "label": "target",
+                    "text": "${target}",
+                    "type": "text"
+                },
+                {
+                    "label": "source label",
+                    "text": "${source_label}",
+                    "type": "text"
+                },
+                {
+                    "label": "target label",
+                    "text": "${target_label}",
+                    "type": "text"
+                },
+                {
+                    "label": "score",
+                    "text": "${score}",
+                    "type": "text"
+                },
+                {
+                    "label": "target taxa string",
+                    "text": "${target_taxa_string}",
+                    "type": "text"
+                },
+                {
+                    "label": "relative abundance",
+                    "text": "${relative_abundance}",
+                    "type": "text"
+                },
+                {
+                    "label": "prevalence",
+                    "text": "${prevalence}",
+                    "type": "text"
+                },
+                {
+                    "label": "level",
+                    "text": "${level}",
+                    "type": "text"
+                }
+            ]
+        },
+        {
+            "match": [
+                "Negative co-abundance"
+            ],
+            "selected": true,
+            "display": [
+                {
+                    "label": "source",
+                    "text": "${source}",
+                    "type": "text"
+                },
+                {
+                    "label": "relation",
+                    "text": "${relation}",
+                    "type": "text"
+                },
+                {
+                    "label": "target",
+                    "text": "${target}",
+                    "type": "text"
+                },
+                {
+                    "label": "source label",
+                    "text": "${source_label}",
+                    "type": "text"
+                },
+                {
+                    "label": "target label",
+                    "text": "${target_label}",
+                    "type": "text"
+                },
+                {
+                    "label": "score",
+                    "text": "${score}",
+                    "type": "text"
+                },
+                {
+                    "label": "target taxa string",
+                    "text": "${target_taxa_string}",
+                    "type": "text"
+                },
+                {
+                    "label": "relative abundance",
+                    "text": "${relative_abundance}",
+                    "type": "text"
+                },
+                {
+                    "label": "prevalence",
+                    "text": "${prevalence}",
+                    "type": "text"
+                },
+                {
+                    "label": "level",
+                    "text": "${level}",
+                    "type": "text"
+                }
+            ]
+        },
+        {
+            "match": [
+                "Negative co-abundance"
+            ],
+            "selected": true,
+            "display": [
+                {
+                    "label": "source",
+                    "text": "${source}",
+                    "type": "text"
+                },
+                {
+                    "label": "relation",
+                    "text": "${relation}",
+                    "type": "text"
+                },
+                {
+                    "label": "target",
+                    "text": "${target}",
+                    "type": "text"
+                },
+                {
+                    "label": "source label",
+                    "text": "${source_label}",
+                    "type": "text"
+                },
+                {
+                    "label": "target label",
+                    "text": "${target_label}",
+                    "type": "text"
+                },
+                {
+                    "label": "score",
+                    "text": "${score}",
+                    "type": "text"
+                },
+                {
+                    "label": "target taxa string",
+                    "text": "${target_taxa_string}",
+                    "type": "text"
+                },
+                {
+                    "label": "relative abundance",
+                    "text": "${relative_abundance}",
+                    "type": "text"
+                },
+                {
+                    "label": "prevalence",
+                    "text": "${prevalence}",
+                    "type": "text"
+                },
+                {
+                    "label": "level",
+                    "text": "${level}",
+                    "type": "text"
+                }
+            ]
+        },
+        {
+            "match": [
+                "Negative co-abundance"
+            ],
+            "selected": true,
+            "display": [
+                {
+                    "label": "source",
+                    "text": "${source}",
+                    "type": "text"
+                },
+                {
+                    "label": "relation",
+                    "text": "${relation}",
+                    "type": "text"
+                },
+                {
+                    "label": "target",
+                    "text": "${target}",
+                    "type": "text"
+                },
+                {
+                    "label": "source label",
+                    "text": "${source_label}",
+                    "type": "text"
+                },
+                {
+                    "label": "target label",
+                    "text": "${target_label}",
+                    "type": "text"
+                },
+                {
+                    "label": "score",
+                    "text": "${score}",
+                    "type": "text"
+                },
+                {
+                    "label": "target taxa string",
+                    "text": "${target_taxa_string}",
+                    "type": "text"
+                },
+                {
+                    "label": "relative abundance",
+                    "text": "${relative_abundance}",
+                    "type": "text"
+                },
+                {
+                    "label": "prevalence",
+                    "text": "${prevalence}",
+                    "type": "text"
+                },
+                {
+                    "label": "level",
+                    "text": "${level}",
+                    "type": "text"
+                }
+            ]
+        },
+        {
+            "match": [
+                "Positive co-abundance"
+            ],
+            "selected": true,
+            "display": [
+                {
+                    "label": "source",
+                    "text": "${source}",
+                    "type": "text"
+                },
+                {
+                    "label": "relation",
+                    "text": "${relation}",
+                    "type": "text"
+                },
+                {
+                    "label": "target",
+                    "text": "${target}",
+                    "type": "text"
+                },
+                {
+                    "label": "source label",
+                    "text": "${source_label}",
+                    "type": "text"
+                },
+                {
+                    "label": "target label",
+                    "text": "${target_label}",
+                    "type": "text"
+                },
+                {
+                    "label": "score",
+                    "text": "${score}",
+                    "type": "text"
+                },
+                {
+                    "label": "target taxa string",
+                    "text": "${target_taxa_string}",
+                    "type": "text"
+                },
+                {
+                    "label": "relative abundance",
+                    "text": "${relative_abundance}",
+                    "type": "text"
+                },
+                {
+                    "label": "prevalence",
+                    "text": "${prevalence}",
+                    "type": "text"
+                },
+                {
+                    "label": "level",
+                    "text": "${level}",
+                    "type": "text"
+                }
+            ]
+        },
+        {
+            "match": [
+                "Positive co-abundance"
+            ],
+            "selected": true,
+            "display": [
+                {
+                    "label": "source",
+                    "text": "${source}",
+                    "type": "text"
+                },
+                {
+                    "label": "relation",
+                    "text": "${relation}",
+                    "type": "text"
+                },
+                {
+                    "label": "target",
+                    "text": "${target}",
+                    "type": "text"
+                },
+                {
+                    "label": "source label",
+                    "text": "${source_label}",
+                    "type": "text"
+                },
+                {
+                    "label": "target label",
+                    "text": "${target_label}",
+                    "type": "text"
+                },
+                {
+                    "label": "score",
+                    "text": "${score}",
+                    "type": "text"
+                },
+                {
+                    "label": "target taxa string",
+                    "text": "${target_taxa_string}",
+                    "type": "text"
+                },
+                {
+                    "label": "relative abundance",
+                    "text": "${relative_abundance}",
+                    "type": "text"
+                },
+                {
+                    "label": "prevalence",
+                    "text": "${prevalence}",
+                    "type": "text"
+                },
+                {
+                    "label": "level",
+                    "text": "${level}",
+                    "type": "text"
+                }
+            ]
+        },
+        {
+            "match": [
+                "Positive co-abundance"
+            ],
+            "selected": true,
+            "display": [
+                {
+                    "label": "source",
+                    "text": "${source}",
+                    "type": "text"
+                },
+                {
+                    "label": "relation",
+                    "text": "${relation}",
+                    "type": "text"
+                },
+                {
+                    "label": "target",
+                    "text": "${target}",
+                    "type": "text"
+                },
+                {
+                    "label": "source label",
+                    "text": "${source_label}",
+                    "type": "text"
+                },
+                {
+                    "label": "target label",
+                    "text": "${target_label}",
+                    "type": "text"
+                },
+                {
+                    "label": "score",
+                    "text": "${score}",
+                    "type": "text"
+                },
+                {
+                    "label": "target taxa string",
+                    "text": "${target_taxa_string}",
+                    "type": "text"
+                },
+                {
+                    "label": "relative abundance",
+                    "text": "${relative_abundance}",
+                    "type": "text"
+                },
+                {
+                    "label": "prevalence",
+                    "text": "${prevalence}",
+                    "type": "text"
+                },
+                {
+                    "label": "level",
+                    "text": "${level}",
+                    "type": "text"
+                }
+            ]
+        },
+        {
+            "match": [
+                "Positive co-abundance"
+            ],
+            "selected": true,
+            "display": [
+                {
+                    "label": "source",
+                    "text": "${source}",
+                    "type": "text"
+                },
+                {
+                    "label": "relation",
+                    "text": "${relation}",
+                    "type": "text"
+                },
+                {
+                    "label": "target",
+                    "text": "${target}",
+                    "type": "text"
+                },
+                {
+                    "label": "source label",
+                    "text": "${source_label}",
+                    "type": "text"
+                },
+                {
+                    "label": "target label",
+                    "text": "${target_label}",
+                    "type": "text"
+                },
+                {
+                    "label": "score",
+                    "text": "${score}",
+                    "type": "text"
+                },
+                {
+                    "label": "target taxa string",
+                    "text": "${target_taxa_string}",
+                    "type": "text"
+                },
+                {
+                    "label": "relative abundance",
+                    "text": "${relative_abundance}",
+                    "type": "text"
+                },
+                {
+                    "label": "prevalence",
+                    "text": "${prevalence}",
+                    "type": "text"
+                },
+                {
+                    "label": "level",
+                    "text": "${level}",
+                    "type": "text"
+                }
+            ]
+        },
+        {
+            "match": [
+                "Positive co-abundance"
+            ],
+            "selected": true,
+            "display": [
+                {
+                    "label": "source",
+                    "text": "${source}",
+                    "type": "text"
+                },
+                {
+                    "label": "relation",
+                    "text": "${relation}",
+                    "type": "text"
+                },
+                {
+                    "label": "target",
+                    "text": "${target}",
+                    "type": "text"
+                },
+                {
+                    "label": "source label",
+                    "text": "${source_label}",
+                    "type": "text"
+                },
+                {
+                    "label": "target label",
+                    "text": "${target_label}",
+                    "type": "text"
+                },
+                {
+                    "label": "score",
+                    "text": "${score}",
+                    "type": "text"
+                },
+                {
+                    "label": "target taxa string",
+                    "text": "${target_taxa_string}",
+                    "type": "text"
+                },
+                {
+                    "label": "relative abundance",
+                    "text": "${relative_abundance}",
+                    "type": "text"
+                },
+                {
+                    "label": "prevalence",
+                    "text": "${prevalence}",
+                    "type": "text"
+                },
+                {
+                    "label": "level",
+                    "text": "${level}",
+                    "type": "text"
+                }
+            ]
+        },
+        {
+            "match": [
+                "Positive co-abundance"
+            ],
+            "selected": true,
+            "display": [
+                {
+                    "label": "source",
+                    "text": "${source}",
+                    "type": "text"
+                },
+                {
+                    "label": "relation",
+                    "text": "${relation}",
+                    "type": "text"
+                },
+                {
+                    "label": "target",
+                    "text": "${target}",
+                    "type": "text"
+                },
+                {
+                    "label": "source label",
+                    "text": "${source_label}",
+                    "type": "text"
+                },
+                {
+                    "label": "target label",
+                    "text": "${target_label}",
+                    "type": "text"
+                },
+                {
+                    "label": "score",
+                    "text": "${score}",
+                    "type": "text"
+                },
+                {
+                    "label": "target taxa string",
+                    "text": "${target_taxa_string}",
+                    "type": "text"
+                },
+                {
+                    "label": "relative abundance",
+                    "text": "${relative_abundance}",
+                    "type": "text"
+                },
+                {
+                    "label": "prevalence",
+                    "text": "${prevalence}",
+                    "type": "text"
+                },
+                {
+                    "label": "level",
+                    "text": "${level}",
+                    "type": "text"
+                }
+            ]
+        },
+        {
+            "match": [
+                "Positive co-abundance"
+            ],
+            "selected": true,
+            "display": [
+                {
+                    "label": "source",
+                    "text": "${source}",
+                    "type": "text"
+                },
+                {
+                    "label": "relation",
+                    "text": "${relation}",
+                    "type": "text"
+                },
+                {
+                    "label": "target",
+                    "text": "${target}",
+                    "type": "text"
+                },
+                {
+                    "label": "source label",
+                    "text": "${source_label}",
+                    "type": "text"
+                },
+                {
+                    "label": "target label",
+                    "text": "${target_label}",
+                    "type": "text"
+                },
+                {
+                    "label": "score",
+                    "text": "${score}",
+                    "type": "text"
+                },
+                {
+                    "label": "target taxa string",
+                    "text": "${target_taxa_string}",
+                    "type": "text"
+                },
+                {
+                    "label": "relative abundance",
+                    "text": "${relative_abundance}",
+                    "type": "text"
+                },
+                {
+                    "label": "prevalence",
+                    "text": "${prevalence}",
+                    "type": "text"
+                },
+                {
+                    "label": "level",
+                    "text": "${level}",
+                    "type": "text"
+                }
+            ]
+        },
+        {
+            "match": [
+                "Positive co-abundance"
+            ],
+            "selected": true,
+            "display": [
+                {
+                    "label": "source",
+                    "text": "${source}",
+                    "type": "text"
+                },
+                {
+                    "label": "relation",
+                    "text": "${relation}",
+                    "type": "text"
+                },
+                {
+                    "label": "target",
+                    "text": "${target}",
+                    "type": "text"
+                },
+                {
+                    "label": "source label",
+                    "text": "${source_label}",
+                    "type": "text"
+                },
+                {
+                    "label": "target label",
+                    "text": "${target_label}",
+                    "type": "text"
+                },
+                {
+                    "label": "score",
+                    "text": "${score}",
+                    "type": "text"
+                },
+                {
+                    "label": "target taxa string",
+                    "text": "${target_taxa_string}",
+                    "type": "text"
+                },
+                {
+                    "label": "relative abundance",
+                    "text": "${relative_abundance}",
+                    "type": "text"
+                },
+                {
+                    "label": "prevalence",
+                    "text": "${prevalence}",
+                    "type": "text"
+                },
+                {
+                    "label": "level",
+                    "text": "${level}",
+                    "type": "text"
+                }
+            ]
+        },
+        {
+            "match": [
+                "Positive co-abundance"
+            ],
+            "selected": true,
+            "display": [
+                {
+                    "label": "source",
+                    "text": "${source}",
+                    "type": "text"
+                },
+                {
+                    "label": "relation",
+                    "text": "${relation}",
+                    "type": "text"
+                },
+                {
+                    "label": "target",
+                    "text": "${target}",
+                    "type": "text"
+                },
+                {
+                    "label": "source label",
+                    "text": "${source_label}",
+                    "type": "text"
+                },
+                {
+                    "label": "target label",
+                    "text": "${target_label}",
+                    "type": "text"
+                },
+                {
+                    "label": "score",
+                    "text": "${score}",
+                    "type": "text"
+                },
+                {
+                    "label": "target taxa string",
+                    "text": "${target_taxa_string}",
+                    "type": "text"
+                },
+                {
+                    "label": "relative abundance",
+                    "text": "${relative_abundance}",
+                    "type": "text"
+                },
+                {
+                    "label": "prevalence",
+                    "text": "${prevalence}",
+                    "type": "text"
+                },
+                {
+                    "label": "level",
+                    "text": "${level}",
+                    "type": "text"
+                }
+            ]
+        },
+        {
+            "match": [
+                "Positive co-abundance"
+            ],
+            "selected": true,
+            "display": [
+                {
+                    "label": "source",
+                    "text": "${source}",
+                    "type": "text"
+                },
+                {
+                    "label": "relation",
+                    "text": "${relation}",
+                    "type": "text"
+                },
+                {
+                    "label": "target",
+                    "text": "${target}",
+                    "type": "text"
+                },
+                {
+                    "label": "source label",
+                    "text": "${source_label}",
+                    "type": "text"
+                },
+                {
+                    "label": "target label",
+                    "text": "${target_label}",
+                    "type": "text"
+                },
+                {
+                    "label": "score",
+                    "text": "${score}",
+                    "type": "text"
+                },
+                {
+                    "label": "target taxa string",
+                    "text": "${target_taxa_string}",
+                    "type": "text"
+                },
+                {
+                    "label": "relative abundance",
+                    "text": "${relative_abundance}",
+                    "type": "text"
+                },
+                {
+                    "label": "prevalence",
+                    "text": "${prevalence}",
+                    "type": "text"
+                },
+                {
+                    "label": "level",
+                    "text": "${level}",
+                    "type": "text"
                 }
             ]
         }
     ],
     "header": {
-        "header": "Enrichr-KG",
-        "title": "Enrichr-KG",
+        "header": "Jakleen Lee: Final project",
+        "title": "Jakleen Lee: Final project",
         "background": {
             "backgroundColor": "#000",
             "contrastText": "#FFF"
         },
         "icon": {
-            "src": "https://minio.dev.maayanlab.cloud/enrichr-kg/enrichr-kg.png",
-            "favicon": "https://minio.dev.maayanlab.cloud/enrichr-kg/enrichr-kg.png",
-            "faviconTitle": "Enrichr-KG",
-            "alt": "Enrichr-KG",
-            "key": "Enrichr-KG_logo",
+            "src": "https://raw.githubusercontent.com/jakleenlee/Gene-Knowledge-Graph/next14/bacteria.png",
+            "favicon": "https://raw.githubusercontent.com/jakleenlee/Gene-Knowledge-Graph/next14/bacteria.png",
+            "faviconTitle": "Jakleen Lee: Final project",
+            "alt": "Jakleen Lee: Final project",
+            "key": "Jakleen Lee: Final project_logo",
             "width": 100,
             "height": 60
         },
         "tabs": [
             {
                 "endpoint": "/",
-                "label": "Term & Gene Search",
+                "label": "Term & Feature Search",
                 "type": "page",
                 "component": "KnowledgeGraph",
                 "props": {
                     "init_function": "initialize_kg",
                     "initial_query": {
-                        "start": "Gene",
-                        "start_term": "APOE",
+                        "start": "features",
+                        "start_term": "s__Streptococcus mutans",
                         "start_field": "label"
                     },
                     "subheader": {
